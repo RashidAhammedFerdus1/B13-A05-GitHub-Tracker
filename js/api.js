@@ -9,7 +9,7 @@ async function issuesFetchData() {
 
   displayIssues(issues);
 }
-// display issue
+// display issues
 
 const displayIssues = (issues) => {
   //   console.log(issues);
@@ -78,3 +78,56 @@ const displayIssues = (issues) => {
   });
   // hiddenLoading();
 };
+
+const allbtn = document.getElementById("all-btn");
+const openBtn = document.getElementById("open-btn");
+const closeBtn = document.getElementById("close-btn");
+const countIssues = document.getElementById("countIssues");
+const loadingScan = document.getElementById("loadingScan");
+// showing
+function showLoading() {
+  loadingScan.classList.add("flex");
+  loadingScan.classList.remove("hidden");
+}
+// hidden
+function hiddenLoading() {
+  loadingScan.classList.add("hidden");
+  loadingScan.classList.remove("flex");
+}
+
+let allBtnStatus = "all-btn";
+function toggleBtn(id) {
+  allBtnStatus = id;
+  showLoading();
+  // remove color
+  allbtn.classList.remove("btn-primary", "text-white");
+  openBtn.classList.remove("btn-primary", "text-white");
+  closeBtn.classList.remove("btn-primary", "text-white");
+  // add color
+  allbtn.classList.add("bg-white", "text-black");
+  openBtn.classList.add("bg-white", "text-black");
+  closeBtn.classList.add("bg-white", "text-black");
+
+  const clickbtn = document.getElementById(id);
+  clickbtn.classList.add("bg-blue-500", "text-white");
+  clickbtn.classList.remove("bg-white", "text-black");
+  // section
+
+  setTimeout(() => {
+    if (id === "open-btn") {
+      filteredIssues = issues.filter((issue) => issue.status === "open");
+      displayIssues(filteredIssues);
+
+      document.getElementById("countIssues").innerText = filteredIssues.length;
+    } else if (id === "close-btn") {
+      filteredIssues = issues.filter((issue) => issue.status === "closed");
+      displayIssues(filteredIssues);
+      // hiddenLoading();
+      document.getElementById("countIssues").innerText = filteredIssues.length;
+    } else if (id === "all-btn") {
+      displayIssues(issues);
+      document.getElementById("countIssues").innerText = issues.length;
+    }
+    hiddenLoading();
+  }, 300);
+}
