@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/Aperture.png" type="image/x-icon">
+
+    <!-- daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="bg-white grid grid-cols-1 justify-center w-full max-w-md py-10 mx-auto shadow-2xl items-center">
+        <div class="justify-center space-y-4 text-center">
+            <img class="mx-auto" src="./assets/github-logo.png" alt="">
+            <h3 class="font-semibold text-[24px]">GitHub Issues Tracker</h3>
+            <p class="text-[#64748B] text-xl font-medium">Sign in to manage your issues</p>
+        </div>
+
+
+        <!-- form -->
+        <div class="flex flex-col justify-center items-center">
+            <fieldset class="fieldset border-none rounded-box w-full max-w-sm border p-4">
+                <label class="label text-[20px] font-medium text-[#1F2937]">Username</label>
+                <input type="email" id="inputName" class="input w-full" placeholder="Enter Username" />
+                <label class="text-[#4A00FF]" for="">Default: admin</label>
+
+                <label class="label text-[20px] font-medium text-[#1F2937]">Password</label>
+                <input type="password" id="inputPass" class="input w-full" placeholder="Enter Password" />
+                <label class="text-[#4A00FF]" for="">Default: admin123</label>
+
+
+                <button id="sign-btn" class="btn btn-primary  mt-4 w-full">Sign In</button>
+            </fieldset>
+
+
+        </div>
+        <div class="flex items-center my-6 w-full max-w-md mx-auto px-10">
+            <hr class="flex-grow border-gray-600">
+            <span class="px-2 text-gray-500">OR</span>
+            <hr class="flex-grow border-gray-600">
+        </div>
+
+        <p class="text-center my-5 text-[#1F2937] text-xm">Demo Credentials:</p>
+        <div class="mx-auto p-5 rounded-sm text-center w-full max-w-md bg-white">
+            <div class="bg-gray-200 rounded-xl py-5">
+                <h2><span class="font-bold text-xl text-[#1F2937]">Username:</span> admin
+                </h2>
+                <h2> <span class="font-bold text-xl text-[#1F2937]">Password:</span>
+                    admin123</h2>
+            </div>
+        </div>
+
+    </section>
+
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
